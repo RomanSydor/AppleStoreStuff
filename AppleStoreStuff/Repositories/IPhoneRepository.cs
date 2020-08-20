@@ -1,5 +1,4 @@
-﻿
-using AppleStoreStuff.Models;
+﻿using AppleStoreStuff.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;

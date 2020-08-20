@@ -38,6 +38,7 @@ namespace AppleStoreStuff
                                           Configuration.GetConnectionString("DefaultConnection")));
             
             services.AddScoped<IIPhoneRepository, IPhoneRepository>();
+            services.AddScoped<IIPadRepository, IPadRepository>();
 
         }
 
