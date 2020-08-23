@@ -3,10 +3,30 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    string phoneModel = "Apple iPhone 11";
+    string memory = "256 Gb";
 }
 
     <div>
-        <br>
+
+        <form style="padding-top:20px" action="/IPhone/Index/@phoneModel/@memory" method="get">
+            <div>
+                <label style="font-size:20px; text-align:center;">Model</label>
+                <br>
+                <input asp-for="@phoneModel" class="col-lg-3" />
+                
+                <label style="font-size:20px;"><br><br>Memory</label>
+                <br>
+                <input style="" asp-for="@memory" class="col-lg-3" />
+            </div>
+            <h3>
+                <button type="submit" style="color:#18c7c7; background-color: #222222;
+                    margin-top: 25px; height:50px; width: 150px;" class="btn btn-default">
+                    FIND
+                </button>
+            </h3>
+        </form>
+
     </div>
 
 <table class="table">

@@ -33,5 +33,20 @@ namespace AppleStoreStuff.Controllers
 
             return View(iPhone);
         }
+
+
+        [HttpGet]
+        [Route("/IPhone/Index/{model}/{memory}")]
+        public async Task<IActionResult> Index([FromRoute]string model, [FromRoute]string memory)
+        {
+            var iPhones = await _iPhoneRepository.GetIPhonesByModel(model, memory);
+
+            if (iPhones == null)
+            {
+                NotFound();
+            }
+
+            return View(iPhones);
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace AppleStoreStuff.Repositories
     {
         Task<List<IPhone>> GetIPhonesAsync();
         Task<IPhone> GetIPhoneByIdAsync(int id);
+        Task<List<IPhone>> GetIPhonesByModel(string model, string memory); 
     }
 }
