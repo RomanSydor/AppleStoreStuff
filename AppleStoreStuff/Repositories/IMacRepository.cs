@@ -9,5 +9,6 @@ namespace AppleStoreStuff.Repositories
     {
         Task<List<Mac>> GetMacsAsync();
         Task<Mac> GetMacByIdAsync(int id);
+        Task<List<Mac>> GetMacsByModel(string model, string color, string memory);
     }
 }
