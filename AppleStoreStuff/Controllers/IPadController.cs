@@ -31,5 +31,20 @@ namespace AppleStoreStuff.Controllers
             }
             return View(iPad);
         }
+
+        [HttpGet]
+        [Route("/IPad/Index/{model}/{memory}/{type}")]
+        public async Task<IActionResult> Index([FromRoute]string model, [FromRoute]string memory, [FromRoute]string type)
+        {
+            var iPads = await _iPadRepository.GetIPadsByModel(model, memory, type);
+
+            if (iPads == null)
+            {
+                NotFound();
+            }
+
+            return View(iPads);
+        }
+
     }
 }

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<AppleStoreStuff.Models.IPad>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPadModel)
+            </th>
+            <td>
+                @Html.DisplayNameFor(model => model.Type)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Memory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountOfProduct)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="~/images/@item.IPadModel-@item.Color .webp" alt="@item.TypeOfModel-@item.Color-img" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IPadModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfProduct)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

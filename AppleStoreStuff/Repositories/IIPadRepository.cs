@@ -8,5 +8,6 @@ namespace AppleStoreStuff.Repositories
     {
         Task<List<IPad>> GetIPadsAsync();
         Task<IPad> GetIPadByIdAsync(int id);
+        Task<List<IPad>> GetIPadsByModel(string model, string memory, string type);
     }
 }
