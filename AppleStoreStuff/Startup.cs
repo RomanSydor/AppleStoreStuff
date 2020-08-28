@@ -1,5 +1,4 @@
 ﻿using AppleStoreStuff.Models;
-using AppleStoreStuff.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,12 +31,6 @@ namespace AppleStoreStuff
                                       options.UseSqlServer(
                                           Configuration.GetConnectionString("DefaultConnection")));
             
-            services.AddScoped<IIPhoneRepository, IPhoneRepository>();
-            services.AddScoped<IIPadRepository, IPadRepository>();
-            services.AddScoped<IMacRepository, MacRepository>();
-            services.AddScoped<IAppleWatchRepository, AppleWatchRepository>();
-            services.AddScoped<IAirPodsRepository, AirPodsRepository>();
-
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
