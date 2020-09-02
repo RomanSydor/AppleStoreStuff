@@ -122,6 +122,10 @@ namespace AppleStoreStuff.Controllers
                 x.UhdRecording = iPhone.UhdRecording;
                 x.BatteryCapacity = iPhone.BatteryCapacity;
                 x.Processor = iPhone.Processor;
+                x.Ram = iPhone.Ram;
+                x.MainCamera = iPhone.MainCamera;
+                x.FrontCamera = iPhone.FrontCamera;
+                x.Color = iPhone.Color;
                 x.Price = iPhone.Price;
                 x.Description = iPhone.Description;
                 x.AmountOfProduct = iPhone.AmountOfProduct;

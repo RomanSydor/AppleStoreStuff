@@ -11,7 +11,7 @@ namespace AppleStoreStuff.Repositories
         IPhone GetPhoneByProp(Func<IPhone, bool> getIPhonebyIdFunction);
         void CreateIPhone(IPhone iPhone);
         void DeleteIPhone(IPhone iPhone);
-        void EditIPhone(IPhone iPhone, Action<IPhone> action);
+        void EditIPhone(IPhone iPhone, Action<IPhone> editAction);
     }
 
     public class IPhoneRepository : IIPhoneRepository
@@ -50,7 +50,7 @@ namespace AppleStoreStuff.Repositories
 
         public void EditIPhone(IPhone iPhone, Action<IPhone> editAction)
         {
-            var iph = _db.IPhones.FirstOrDefault(x => x.Id == iPhone.Id);
+            var iph = GetPhoneByProp(x => x.Id == iPhone.Id);
 
             if (iph != null)
             {
