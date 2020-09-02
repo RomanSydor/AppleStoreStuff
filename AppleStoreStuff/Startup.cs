@@ -34,6 +34,7 @@ namespace AppleStoreStuff
 
             services.AddScoped<IIPhoneRepository, IPhoneRepository>();
             services.AddScoped<IIPadRepository, IPadRepository>();
+            services.AddScoped<IMacRepository, MacRepository>();
 
         }
 
