@@ -1,0 +1,61 @@
+﻿@model IEnumerable<AppleStoreStuff.Models.IPhone>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a href="/IPhone/Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IPhoneModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Memory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountOfProduct)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IPhoneModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfProduct)
+            </td>
+            <td>
+                <a href="/IPhone/Edit/@item.Id">Edit</a> |
+                <a href="/IPhone/Details/@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

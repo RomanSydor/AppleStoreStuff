@@ -1,0 +1,102 @@
+﻿@model AppleStoreStuff.Models.IPhone
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>IPhone</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="IPhoneModel" class="control-label"></label>
+                <input asp-for="IPhoneModel" class="form-control" />
+                <span asp-validation-for="IPhoneModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Memory" class="control-label"></label>
+                <input asp-for="Memory" class="form-control" />
+                <span asp-validation-for="Memory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScreenType" class="control-label"></label>
+                <input asp-for="ScreenType" class="form-control" />
+                <span asp-validation-for="ScreenType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScreenSize" class="control-label"></label>
+                <input asp-for="ScreenSize" class="form-control" />
+                <span asp-validation-for="ScreenSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UhdRecording" class="control-label"></label>
+                <input asp-for="UhdRecording" class="form-control" />
+                <span asp-validation-for="UhdRecording" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BatteryCapacity" class="control-label"></label>
+                <input asp-for="BatteryCapacity" class="form-control" />
+                <span asp-validation-for="BatteryCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Processor" class="control-label"></label>
+                <input asp-for="Processor" class="form-control" />
+                <span asp-validation-for="Processor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ram" class="control-label"></label>
+                <input asp-for="Ram" class="form-control" />
+                <span asp-validation-for="Ram" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainCamera" class="control-label"></label>
+                <input asp-for="MainCamera" class="form-control" />
+                <span asp-validation-for="MainCamera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FrontCamera" class="control-label"></label>
+                <input asp-for="FrontCamera" class="form-control" />
+                <span asp-validation-for="FrontCamera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountOfProduct" class="control-label"></label>
+                <input asp-for="AmountOfProduct" class="form-control" />
+                <span asp-validation-for="AmountOfProduct" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

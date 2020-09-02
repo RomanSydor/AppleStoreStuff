@@ -1,4 +1,5 @@
 ﻿using AppleStoreStuff.Models;
+using AppleStoreStuff.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,6 +31,8 @@ namespace AppleStoreStuff
             services.AddDbContext<DataContext>(options =>
                                       options.UseSqlServer(
                                           Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IIPhoneRepository, IPhoneRepository>();
             
         }
 
