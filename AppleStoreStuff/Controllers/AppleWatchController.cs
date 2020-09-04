@@ -19,7 +19,7 @@ namespace AppleStoreStuff.Controllers
         public IActionResult Index()
         {
             var watches = _appleWatchRepository.GetAllWatches(x => true);
-            return View();
+            return View(watches);
         }
 
         [HttpGet]
@@ -46,7 +46,7 @@ namespace AppleStoreStuff.Controllers
         [HttpPost]
         [Route("/AppleWatch/Create")]
         public IActionResult Create([Bind("Id,AppleWatchModel," +
-            "ScreenSize,Cellular,Gps,Color,HousingMaterial,StrapType" +
+            "ScreenSize,Cellular,Gps,Color,HousingMaterial,StrapType," +
             "Price,Description,AmountOfProduct")]AppleWatch watch)
         {
             if (ModelState.IsValid)
@@ -100,7 +100,7 @@ namespace AppleStoreStuff.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("Id,AppleWatchModel," +
-            "ScreenSize,Cellular,Gps,Color,HousingMaterial,StrapType" +
+            "ScreenSize,Cellular,Gps,Color,HousingMaterial,StrapType," +
             "Price,Description,AmountOfProduct")]AppleWatch watch)
         {
             if (id != watch.Id)
