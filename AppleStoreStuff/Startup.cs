@@ -36,6 +36,7 @@ namespace AppleStoreStuff
             services.AddScoped<IIPadRepository, IPadRepository>();
             services.AddScoped<IMacRepository, MacRepository>();
             services.AddScoped<IAppleWatchRepository, AppleWatchRepository>();
+            services.AddScoped<IAirPodsRepository, AirPodsRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
