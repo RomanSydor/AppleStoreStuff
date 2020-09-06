@@ -1,5 +1,6 @@
 ﻿using AppleStoreStuff.Models;
 using AppleStoreStuff.Repositories;
+using AppleStoreStuff.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -37,6 +38,10 @@ namespace AppleStoreStuff
             services.AddScoped<IMacRepository, MacRepository>();
             services.AddScoped<IAppleWatchRepository, AppleWatchRepository>();
             services.AddScoped<IAirPodsRepository, AirPodsRepository>();
+            services.AddScoped<IPurchaseRepository, PurchaseRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IPurchaseService, PurchaseService>();
+            services.AddScoped<Cart>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
