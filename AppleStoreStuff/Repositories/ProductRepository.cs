@@ -23,8 +23,9 @@ namespace AppleStoreStuff.Repositories
         public IEnumerable<Product> GetCart(int purchaseId)
         {
             var purch = _purchaseRepository.GetPurchaseByProp(x => x.Id == purchaseId);
-            _cart.CartList.Add(JsonConvert.DeserializeObject<Product>(purch.BoughtProds));
 
+            _cart.CartList = JsonConvert.DeserializeObject<List<Product>>(purch.BoughtProds);
+           
             return _cart.CartList;
         }
 
