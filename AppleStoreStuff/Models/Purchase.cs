@@ -30,12 +30,6 @@ namespace AppleStoreStuff.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        //[IsRepeat]  TODO create repeat check validation!!!
-        [Display(Name = "Promo code")]
-        public string PromoCode { get; set; } = null;
-        public float PromoAmount { get; set; }
-        public string PromoValue { get; set; }
-
         public DateTime Date { get; set; }
 
         public float TotalPrice { get; set; }
