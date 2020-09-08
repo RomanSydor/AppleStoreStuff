@@ -5,55 +5,62 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2 style="text-align: center;">iPhone</h2>
 
 <p>
-    <a href="/IPhone/Create">Create New</a>
+    <a href="/IPhone/Create" class="btn btn-success">Create New</a>
 </p>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IPhoneModel)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Memory)
+                Model
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Color)
+                Memory
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                Color
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AmountOfProduct)
+                Price
+            </th>
+            <th>
+                Amount
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr >
             <td>
+                <img src="~/images/@item.IPhoneModel-@item.Color .webp" alt="@item.IPhoneModel-@item.Color-img" />
+            </td>
+            <td style="padding-top: 120px;">
                 @Html.DisplayFor(modelItem => item.IPhoneModel)
             </td>
-            <td>
+            <td style="padding-top: 120px;">
                 @Html.DisplayFor(modelItem => item.Memory)
             </td>
-            <td>
+            <td style="padding-top: 120px;">
                 @Html.DisplayFor(modelItem => item.Color)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
+            <td style="padding-top: 120px;">
+               $ @Html.DisplayFor(modelItem => item.Price)
             </td>
-            <td>
+            <td style="padding-top: 120px;">
                 @Html.DisplayFor(modelItem => item.AmountOfProduct)
             </td>
-            <td>
-                <a href="/IPhone/Edit/@item.Id">Edit</a> |
-                <a href="/IPhone/Details/@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <td style="padding-top: 60px;">
+                <a href="/IPhone/Edit/@item.Id" class="btn btn-default" style="margin-bottom: 15px;">Edit</a>
+                <br>
+                <a href="/IPhone/Details/@item.Id" class="btn btn-success" style="margin-bottom: 15px;">Details</a>
+                <br>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" style="margin-bottom: 15px;">Delete</a>
             </td>
         </tr>
 }

@@ -5,11 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2 style="text-align:center;">Edit</h2>
 
-<h4>IPhone</h4>
+<div>
+    <a asp-action="Index" class="btn btn-default">Back to List</a>
+</div>
+
 <hr />
-<div class="row">
+<div class="row" style="justify-content: space-around; display: flex;" >
+    <div>
+        <img style="height: 500px;" src="~/images/@Model.IPhoneModel-@Model.Color-details .webp" alt="@Model.IPhoneModel-@Model.Color-img" />
+    </div>
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -90,13 +96,8 @@
                 <span asp-validation-for="AmountOfProduct" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
